@@ -1,0 +1,15 @@
+// Left segment driver
+
+module LeftSegDriver (A1, B1, C1, D1, a1, b1, c1, d1, e1, f1, g1);
+input A1, B1, C1, D1;
+output a1, b1, c1, d1, e1, f1, g1;
+
+assign a1 = A1&C1;
+assign b1 = 0;
+assign c1 = 0;
+assign d1 = A1&C1;
+assign e1 = A1&C1;
+assign f1 = A1&C1;
+assign g1 = 1;
+
+endmodule

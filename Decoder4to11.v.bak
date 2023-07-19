@@ -1,0 +1,20 @@
+// 11 to 4 Decoder
+
+module Decoder4to11 (I0, I1, I2, I3, D0, D1, D2, D3, D4, D5, D6, D7, D8, D9, D10);
+input I0, I1, I2, I3;
+output D0, D1, D2, D3, D4, D5, D6, D7, D8, D9, D10;
+
+assign D0 = ~I3&~I2&~I1&~I0;
+assign D1 = ~I3&~I2&~I1&I0;
+assign D2 = ~I3&~I2&I1&~I0;
+assign D3 = ~I3&~I2&I1&I0;
+assign D4 = ~I3&I2&~I1&~I0;
+assign D5 = ~I3&I2&~I1&I0;
+assign D6 = ~I3&I2&I1&~I0;
+assign D7 = ~I3&I2&I1&I0;
+assign D8 = I3&~I2&~I1&~I0;
+assign D9 = I3&~I2&~I1&I0;
+assign D10 = I3&~I2&I1&~I0;
+
+
+endmodule

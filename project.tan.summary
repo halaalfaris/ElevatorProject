@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.530 ns
+From           : DD9
+To             : reg4b:inst40|dff1:comb_11|SR2:comb_7|Andgate2:comb_9|out~261
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 13.030 ns
+From           : counter4b:inst38|dff1:comb_84|SR2:comb_8|Andgate2:comb_9|out~84
+To             : d1
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.596 ns
+From           : Reset
+To             : counter4b:inst38|dff1:comb_82|SR2:comb_8|Andgate2:comb_9|out~84
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clock:inst1|pll:inst5|altpll:altpll_component|_clk0'
+Slack          : 30.898 ns
+Required Time  : 14.00 MHz ( period = 71.428 ns )
+Actual Time    : 103.82 MHz ( period = 9.632 ns )
+From           : reg4b:inst40|dff1:comb_11|SR2:comb_8|Andgate2:comb_9|out~84
+To             : reg4b:inst40|dff1:comb_11|SR2:comb_7|Andgate2:comb_9|out~261
+From Clock     : clock:inst1|pll:inst5|altpll:altpll_component|_clk0
+To Clock       : clock:inst1|pll:inst5|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clock:inst1|pll:inst5|altpll:altpll_component|_clk0'
+Slack          : 0.391 ns
+Required Time  : 14.00 MHz ( period = 71.428 ns )
+Actual Time    : N/A
+From           : clock:inst1|counter:inst|counter_out[0]
+To             : clock:inst1|counter:inst|counter_out[0]
+From Clock     : clock:inst1|pll:inst5|altpll:altpll_component|_clk0
+To Clock       : clock:inst1|pll:inst5|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

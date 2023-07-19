@@ -1,0 +1,26 @@
+module counter4b(reset, clk, Up, S, C0, C1, C2, C3);
+input reset, clk, Up;
+output C0, C1, C2, C3;
+
+wire D0, D1, D2, D3, mux0, mux1, mux2, mux3;
+
+//A=Up		B=C3		C=C2		D=C1		E=C0
+
+assign D0 = (C2&~C0) | (Up&~C3&~C0) | (~Up&C1&~C0) | (C3&~C1&~C0);
+assign D1 = (~Up&C1&C0) | (Up&~C1&C0) | (Up&C1&~C0) | (~Up&C2&~C1&~C0) | (~Up&C3&~C1&~C0);
+assign D2 = (~Up&C2&C0) | (C2&C1&~C0) | (Up&C2&~C1) | (~Up&C3&~C1&~C0) | (Up&~C2&C1&C0);
+assign D3 = (C3&C0) | (C3&C1) | (Up&C3) | (Up&C2&C1&C0);
+
+//mux2to1 (i0, i1, S, out);
+mux2to1 (D0, C0, S, mux0);
+mux2to1 (D1, C1, S, mux1);
+mux2to1 (D2, C2, S, mux2);
+mux2to1 (D3, C3, S, mux3);
+
+//dff1(D,Reset,clk,Q,Qnot);
+dff1 (mux3, reset, clk, C3, C3not);
+dff1 (mux2, reset, clk, C2, C2not);
+dff1 (mux1, reset, clk, C1, C1not);
+dff1 (mux0, reset, clk, C0, C0not);
+
+endmodule

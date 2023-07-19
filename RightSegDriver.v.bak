@@ -1,0 +1,15 @@
+// Right 7 segment driver
+
+module RightSegDriver (A0, B0, C0, D0, a0, b0, c0, d0, e0, f0, g0);
+input A0, B0, C0, D0;
+output a0, b0, c0, d0, e0, f0, g0;
+
+assign a0 = (B0&~C0&~D0) | (~A0&~B0&~C0&D0);
+assign b0 = (~A0&B0&~C0&D0) | (~A0&B0&C0&~D0);
+assign c0 = ~A0&~B0&C0&~D0;
+assign d0 = (B0&~C0&~D0) | (B0&C0&D0) | (~A0&~B0&~C0&D0);
+assign e0 = D0 | (B0&~C0);
+assign f0 = (C0&D0) | (~A0&~B0&D0) | (~A0&~B0&C0);
+assign g0 = (A0&C0) | (~A0&~B0&~C0) | (B0&C0&D0);
+
+endmodule

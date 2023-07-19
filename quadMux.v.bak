@@ -1,0 +1,14 @@
+// 2 to 1 Quad mux 
+
+module quadMux (A0, A1, A2, A3, B0, B1, B2, B3, S, M0, M1, M2, M3);
+input A0, A1, A2, A3, B0, B1, B2, B3, S;
+output M0, M1, M2, M3;
+
+
+//mux2to1 (i0, i1, S, out);
+mux2to1 (regA0, regB0, S, M0);
+mux2to1 (regA1, regB1, S, M1);
+mux2to1 (regA2, regB2, S, M2);
+mux2to1 (regA3, regB3, S, M3);
+
+endmodule

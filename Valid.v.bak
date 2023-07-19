@@ -1,0 +1,9 @@
+// Valid bit for control Signal 
+
+module Valid (A, B, C, D, V);
+input A, B, C, D;
+output V;
+
+assign V = (~A&D) | (~A&B) | (~B&C&~D) | (A&~B&~C);
+
+endmodule
